@@ -128,8 +128,7 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  user_data[:age] = update_data[:age]
-  user_data[:address] = update_data[:address]
+  user_data.update(update_data)
   p user_data
 
 end
@@ -150,11 +149,8 @@ def q15
   # 以下に回答を記載
   datas = [data1, data2]
   datas.each do |data|
-    if data.include?(:age)
-      puts "OK"
-    else
-      puts "NG"
-    end
+    result = data.include?(:age) ? "OK" : "NG"
+    puts result
   end
 
 end
